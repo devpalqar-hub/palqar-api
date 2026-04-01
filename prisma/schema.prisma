@@ -1,0 +1,41 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum FormType {
+  WORK_ENQUIRY
+  CUSTOMER_SUPPORT
+  PARTNERSHIP
+}
+
+model ContactForm {
+  id                           String    @id @default(cuid())
+  formType                     FormType?
+  fullName                     String?
+  companyBrandName             String?
+  designationRole              String?
+  emailAddress                 String?
+  phone                        String?
+  serviceInterested            String?
+  budget                       String?
+  projectTimelineExpectedStart String?
+  messageBrief                 String?
+  imageUrl                     String?
+  clientId                     String?
+  typeOfIssue                  String?
+  partnershipType              String?
+  existingClientsOrKeyMarkets  String?
+  websitePortfolio             String?
+  createdAt                    DateTime  @default(now())
+  updatedAt                    DateTime  @updatedAt
+}

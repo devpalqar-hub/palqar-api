@@ -1,0 +1,144 @@
+{
+    "openapi": "3.0.0",
+    "paths": {
+        "/contact-forms": {
+            "post": {
+                "operationId": "ContactFormsController_create",
+                "parameters": [],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateContactFormDto"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Contact form submission stored successfully"
+                    }
+                },
+                "summary": "Create a contact form submission",
+                "tags": [
+                    "contact-forms"
+                ]
+            },
+            "get": {
+                "operationId": "ContactFormsController_findAll",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "List of contact form submissions"
+                    }
+                },
+                "summary": "Get all contact form submissions",
+                "tags": [
+                    "contact-forms"
+                ]
+            }
+        },
+        "/contact-forms/{id}": {
+            "get": {
+                "operationId": "ContactFormsController_findOne",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "required": true,
+                        "in": "path",
+                        "description": "Contact form id",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Contact form submission details"
+                    }
+                },
+                "summary": "Get a contact form submission by id",
+                "tags": [
+                    "contact-forms"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "Contact Form API",
+        "description": "API for submitting and managing contact form entries",
+        "version": "1.0.0",
+        "contact": {}
+    },
+    "tags": [
+        {
+            "name": "contact-forms",
+            "description": ""
+        }
+    ],
+    "servers": [],
+    "components": {
+        "schemas": {
+            "CreateContactFormDto": {
+                "type": "object",
+                "properties": {
+                    "formType": {
+                        "type": "string",
+                        "enum": [
+                            "WORK_ENQUIRY",
+                            "CUSTOMER_SUPPORT",
+                            "PARTNERSHIP"
+                        ]
+                    },
+                    "fullName": {
+                        "type": "string"
+                    },
+                    "companyBrandName": {
+                        "type": "string"
+                    },
+                    "designationRole": {
+                        "type": "string"
+                    },
+                    "emailAddress": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "phone": {
+                        "type": "string"
+                    },
+                    "serviceInterested": {
+                        "type": "string"
+                    },
+                    "budget": {
+                        "type": "string"
+                    },
+                    "projectTimelineExpectedStart": {
+                        "type": "string"
+                    },
+                    "messageBrief": {
+                        "type": "string"
+                    },
+                    "imageUrl": {
+                        "type": "string"
+                    },
+                    "clientId": {
+                        "type": "string"
+                    },
+                    "typeOfIssue": {
+                        "type": "string"
+                    },
+                    "partnershipType": {
+                        "type": "string"
+                    },
+                    "existingClientsOrKeyMarkets": {
+                        "type": "string"
+                    },
+                    "websitePortfolio": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}

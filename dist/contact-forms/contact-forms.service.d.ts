@@ -1,0 +1,82 @@
+import { ConfigService } from '@nestjs/config';
+import { PrismaService } from '../prisma/prisma.service';
+import { CreateContactFormDto } from './dto/create-contact-form.dto';
+import { GetContactFormsDto } from './dto/get-contact-forms.dto';
+export declare class ContactFormsService {
+    private readonly prisma;
+    private readonly configService;
+    private readonly logger;
+    constructor(prisma: PrismaService, configService: ConfigService);
+    create(createContactFormDto: CreateContactFormDto): Promise<{
+        id: string;
+        formType: import("@prisma/client").$Enums.FormType | null;
+        fullName: string | null;
+        companyBrandName: string | null;
+        designationRole: string | null;
+        emailAddress: string | null;
+        phone: string | null;
+        serviceInterested: string | null;
+        budget: string | null;
+        projectTimelineExpectedStart: string | null;
+        messageBrief: string | null;
+        imageUrl: string | null;
+        clientId: string | null;
+        typeOfIssue: string | null;
+        partnershipType: string | null;
+        existingClientsOrKeyMarkets: string | null;
+        websitePortfolio: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    findAll(query: GetContactFormsDto): Promise<{
+        data: {
+            id: string;
+            formType: import("@prisma/client").$Enums.FormType | null;
+            fullName: string | null;
+            companyBrandName: string | null;
+            designationRole: string | null;
+            emailAddress: string | null;
+            phone: string | null;
+            serviceInterested: string | null;
+            budget: string | null;
+            projectTimelineExpectedStart: string | null;
+            messageBrief: string | null;
+            imageUrl: string | null;
+            clientId: string | null;
+            typeOfIssue: string | null;
+            partnershipType: string | null;
+            existingClientsOrKeyMarkets: string | null;
+            websitePortfolio: string | null;
+            createdAt: Date;
+            updatedAt: Date;
+        }[];
+        meta: {
+            total: number;
+            page: number;
+            limit: number;
+            pageCount: number;
+        };
+    }>;
+    findOne(id: string): Promise<{
+        id: string;
+        formType: import("@prisma/client").$Enums.FormType | null;
+        fullName: string | null;
+        companyBrandName: string | null;
+        designationRole: string | null;
+        emailAddress: string | null;
+        phone: string | null;
+        serviceInterested: string | null;
+        budget: string | null;
+        projectTimelineExpectedStart: string | null;
+        messageBrief: string | null;
+        imageUrl: string | null;
+        clientId: string | null;
+        typeOfIssue: string | null;
+        partnershipType: string | null;
+        existingClientsOrKeyMarkets: string | null;
+        websitePortfolio: string | null;
+        createdAt: Date;
+        updatedAt: Date;
+    }>;
+    private sendNotificationEmail;
+}
