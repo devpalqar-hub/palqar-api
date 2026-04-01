@@ -1,0 +1,209 @@
+{
+  "info": {
+    "_postman_id": "8cd0e335-7490-472d-8aa6-4aa47de45f57",
+    "name": "Contact Form API",
+    "description": "API for submitting and managing contact form entries",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "28131837",
+    "_collection_link": "https://go.postman.co/collection/28131837-8cd0e335-7490-472d-8aa6-4aa47de45f57?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "contact-forms",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get a contact form submission by id",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/contact-forms/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact-forms",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "value": "string",
+                      "description": "Contact form id"
+                    }
+                  ]
+                }
+              },
+              "response": [
+                {
+                  "name": "Contact form submission details",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/contact-forms/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "contact-forms",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id",
+                          "value": "string",
+                          "description": "Contact form id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "body": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Create a contact form submission",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"formType\": \"CUSTOMER_SUPPORT\",\n  \"fullName\": \"string\",\n  \"companyBrandName\": \"string\",\n  \"designationRole\": \"string\",\n  \"emailAddress\": \"DKJiY-OcUDcz@bQuXTg.enk\",\n  \"phone\": \"string\",\n  \"serviceInterested\": \"string\",\n  \"budget\": \"string\",\n  \"projectTimelineExpectedStart\": \"string\",\n  \"messageBrief\": \"string\",\n  \"imageUrl\": \"string\",\n  \"clientId\": \"string\",\n  \"typeOfIssue\": \"string\",\n  \"partnershipType\": \"string\",\n  \"existingClientsOrKeyMarkets\": \"string\",\n  \"websitePortfolio\": \"string\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/contact-forms",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contact-forms"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Contact form submission stored successfully",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"formType\": \"CUSTOMER_SUPPORT\",\n  \"fullName\": \"string\",\n  \"companyBrandName\": \"string\",\n  \"designationRole\": \"string\",\n  \"emailAddress\": \"DKJiY-OcUDcz@bQuXTg.enk\",\n  \"phone\": \"string\",\n  \"serviceInterested\": \"string\",\n  \"budget\": \"string\",\n  \"projectTimelineExpectedStart\": \"string\",\n  \"messageBrief\": \"string\",\n  \"imageUrl\": \"string\",\n  \"clientId\": \"string\",\n  \"typeOfIssue\": \"string\",\n  \"partnershipType\": \"string\",\n  \"existingClientsOrKeyMarkets\": \"string\",\n  \"websitePortfolio\": \"string\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/contact-forms",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact-forms"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Get all contact form submissions",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/contact-forms?page=1&limit=2&formType=WORK_ENQUIRY",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "contact-forms"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "1"
+                },
+                {
+                  "key": "limit",
+                  "value": "2"
+                },
+                {
+                  "key": "formType",
+                  "value": "WORK_ENQUIRY",
+                  "description": "  WORK_ENQUIRY\n  CUSTOMER_SUPPORT\n  PARTNERSHIP"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List of contact form submissions",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/contact-forms",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "contact-forms"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "/"
+    }
+  ]
+}

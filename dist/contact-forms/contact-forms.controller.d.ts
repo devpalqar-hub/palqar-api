@@ -5,7 +5,6 @@ export declare class ContactFormsController {
     private readonly contactFormsService;
     constructor(contactFormsService: ContactFormsService);
     create(createContactFormDto: CreateContactFormDto): Promise<{
-        id: string;
         formType: import("@prisma/client").$Enums.FormType | null;
         fullName: string | null;
         companyBrandName: string | null;
@@ -22,12 +21,12 @@ export declare class ContactFormsController {
         partnershipType: string | null;
         existingClientsOrKeyMarkets: string | null;
         websitePortfolio: string | null;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
     }>;
     findAll(query: GetContactFormsDto): Promise<{
         data: {
-            id: string;
             formType: import("@prisma/client").$Enums.FormType | null;
             fullName: string | null;
             companyBrandName: string | null;
@@ -44,6 +43,7 @@ export declare class ContactFormsController {
             partnershipType: string | null;
             existingClientsOrKeyMarkets: string | null;
             websitePortfolio: string | null;
+            id: string;
             createdAt: Date;
             updatedAt: Date;
         }[];
@@ -55,7 +55,6 @@ export declare class ContactFormsController {
         };
     }>;
     findOne(id: string): Promise<{
-        id: string;
         formType: import("@prisma/client").$Enums.FormType | null;
         fullName: string | null;
         companyBrandName: string | null;
@@ -72,6 +71,7 @@ export declare class ContactFormsController {
         partnershipType: string | null;
         existingClientsOrKeyMarkets: string | null;
         websitePortfolio: string | null;
+        id: string;
         createdAt: Date;
         updatedAt: Date;
     }>;

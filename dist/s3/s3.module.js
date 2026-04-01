@@ -6,19 +6,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AppModule = void 0;
+exports.S3Module = void 0;
 const common_1 = require("@nestjs/common");
+const s3_service_1 = require("./s3.service");
+const s3_controller_1 = require("./s3.controller");
 const config_1 = require("@nestjs/config");
-const contact_forms_module_1 = require("./contact-forms/contact-forms.module");
-const s3_module_1 = require("./s3/s3.module");
-let AppModule = class AppModule {
+let S3Module = class S3Module {
 };
-exports.AppModule = AppModule;
-exports.AppModule = AppModule = __decorate([
+exports.S3Module = S3Module;
+exports.S3Module = S3Module = __decorate([
     (0, common_1.Module)({
-        imports: [config_1.ConfigModule.forRoot({ isGlobal: true }), contact_forms_module_1.ContactFormsModule, s3_module_1.S3Module],
-        controllers: [],
-        providers: [],
+        imports: [config_1.ConfigModule],
+        controllers: [s3_controller_1.S3Controller],
+        providers: [s3_service_1.S3Service],
+        exports: [s3_service_1.S3Service],
     })
-], AppModule);
-//# sourceMappingURL=app.module.js.map
+], S3Module);
+//# sourceMappingURL=s3.module.js.map
